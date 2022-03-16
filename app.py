@@ -18,7 +18,7 @@ def test_send_message():
         ret_msg = tb.send_message(CHAT_ID, text)
         assert ret_msg.message_id
 
-if current_time=='17:30:00':
+if current_time=='24:00:00':
     test_send_message()
 
 updater = Updater("5106969742:AAGm8gb9p2Ko1EUu8IvoTMTgce_ilG3ysqo")
