@@ -40,7 +40,7 @@ def youtube_url(update: Update, context: CallbackContext):
 def linkedIn_url(update: Update, context: CallbackContext):
     update.message.reply_text(
         "Instagram URL => \
-        https://www.linkedin.com/in/dwaipayan-bandyopadhyay-007a/")
+        https://www.instagram.com/coding_with_ms_/")
   
   
 def geeks_url(update: Update, context: CallbackContext):
