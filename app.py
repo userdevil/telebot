@@ -1,5 +1,5 @@
 from telegram import*
-import datetime
+from datetime import datetime
 from telegram.ext import*
 import telebot
 
