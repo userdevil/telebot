@@ -13,10 +13,62 @@ def test(update:Update,context:CallbackContext):
 start_value = CommandHandler('mavin',test)
 dispatcher.add_handler(start_value)
 
-def test1(update:Update,context:CallbackContext):
-    bot.send_message(
-        chat_id = update.effective_chat.id,
-        text = "https://youtube.com/channel/UCQNhxVSj8xYB0PG94UlFDJA")
-start_value1 = CommandHandler('youtube',test1)
+
 dispatcher.add_handler(start_value1)
+def start(update: Update, context: CallbackContext):
+    update.message.reply_text(
+        "Hello sir, Welcome to the Bot.Please write\
+        /help to see the commands available.")
+  
+def help(update: Update, context: CallbackContext):
+    update.message.reply_text("""Available Commands :-
+    /youtube - To get the youtube URL
+    /linkedin - To get the LinkedIn profile URL
+    /gmail - To get gmail URL
+    /geeks - To get the GeeksforGeeks URL""")
+  
+  
+def gmail_url(update: Update, context: CallbackContext):
+    update.message.reply_text(
+        "https://codingwithms-60edd.web.app/tutorial.html")
+  
+  
+def youtube_url(update: Update, context: CallbackContext):
+    update.message.reply_text("Youtube Link =>\
+    https://www.youtube.com/channel/UCQNhxVSj8xYB0PG94UlFDJA/null")
+  
+  
+def linkedIn_url(update: Update, context: CallbackContext):
+    update.message.reply_text(
+        "Instagram URL => \
+        https://www.linkedin.com/in/dwaipayan-bandyopadhyay-007a/")
+  
+  
+def geeks_url(update: Update, context: CallbackContext):
+    update.message.reply_text(
+        "Website URL => https://codingwithms-60edd.web.app/")
+  
+  
+def unknown(update: Update, context: CallbackContext):
+    update.message.reply_text(
+        "Sorry '%s' is not a valid command" % update.message.text)
+  
+  
+def unknown_text(update: Update, context: CallbackContext):
+    update.message.reply_text(
+        "Sorry I can't recognize you , you said '%s'" % update.message.text)
+  
+  
+updater.dispatcher.add_handler(CommandHandler('start', start))
+updater.dispatcher.add_handler(CommandHandler('youtube', youtube_url))
+updater.dispatcher.add_handler(CommandHandler('help', help))
+updater.dispatcher.add_handler(CommandHandler('instagram', linkedIn_url))
+updater.dispatcher.add_handler(CommandHandler('tutorials', gmail_url))
+updater.dispatcher.add_handler(CommandHandler('Website', geeks_url))
+updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown))
+updater.dispatcher.add_handler(MessageHandler(
+    Filters.command, unknown))  # Filters out unknown commands
+  
+# Filters out unknown messages.
+updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown_text))
 updater.start_polling()
