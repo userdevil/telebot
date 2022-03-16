@@ -21,9 +21,10 @@ def start(update: Update, context: CallbackContext):
 def help(update: Update, context: CallbackContext):
     update.message.reply_text("""Available Commands :-
     /youtube - To get the youtube URL
-    /linkedin - To get the LinkedIn profile URL
-    /gmail - To get gmail URL
-    /geeks - To get the GeeksforGeeks URL""")
+    /instagram - To get the Instagram profile URL
+    /tutorials - To get python Tutorial URL
+    /tutorialmodels - To get separate tutorials
+    /Website - To get the Website URL""")
   
   
 def gmail_url(update: Update, context: CallbackContext):
