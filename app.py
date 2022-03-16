@@ -13,8 +13,6 @@ def test(update:Update,context:CallbackContext):
 start_value = CommandHandler('mavin',test)
 dispatcher.add_handler(start_value)
 
-
-dispatcher.add_handler(start_value1)
 def start(update: Update, context: CallbackContext):
     update.message.reply_text(
         "Hello sir, Welcome to the Bot.Please write\
