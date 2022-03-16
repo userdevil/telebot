@@ -24,6 +24,7 @@ def help(update: Update, context: CallbackContext):
     /instagram - To get the Instagram profile URL
     /tutorials - To get python Tutorial URL
     /tutorialmodels - To get separate tutorials
+    /API - To get developement api's developed by coding with ms
     /Website - To get the Website URL""")
   
   
@@ -57,8 +58,18 @@ def unknown_text(update: Update, context: CallbackContext):
     update.message.reply_text(
         "Sorry I can't recognize you , you said '%s'" % update.message.text)
   
-  
+ def tut(update: Update, context: CallbackContext):
+    update.message.reply_text("""Available TUtorials :-
+    https://www.youtube.com/channel/UCQNhxVSj8xYB0PG94UlFDJA/videos""")
+   
+ def api(update: Update, context: CallbackContext):
+    update.message.reply_text("""Available API's :-
+    End Url Tracking - https://redliapi.herokuapp.com/
+    Encoder - https://encapi.herokuapp.com/""")
+    
 updater.dispatcher.add_handler(CommandHandler('start', start))
+updater.dispatcher.add_handler(CommandHandler('tutorialmodels', tut))
+updater.dispatcher.add_handler(CommandHandler('API', api))
 updater.dispatcher.add_handler(CommandHandler('youtube', youtube_url))
 updater.dispatcher.add_handler(CommandHandler('help', help))
 updater.dispatcher.add_handler(CommandHandler('instagram', linkedIn_url))
