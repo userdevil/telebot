@@ -1,7 +1,25 @@
 from telegram import*
+import datetime
 from telegram.ext import*
+import telebot
+
 bot = Bot("5106969742:AAGm8gb9p2Ko1EUu8IvoTMTgce_ilG3ysqo")
 print(bot.get_me())
+
+TOKEN = '5106969742:AAGm8gb9p2Ko1EUu8IvoTMTgce_ilG3ysqo'
+bt = telebot.TeleBot(TOKEN)
+
+now = datetime.now()
+current_time = now.strftime("%H:%M:%S")
+
+def test_send_message():
+        text = 'CI Test Message'
+        tb = telebot.TeleBot(TOKEN)
+        ret_msg = tb.send_message(CHAT_ID, text)
+        assert ret_msg.message_id
+
+if current_time=='17:30:00':
+    test_send_message()
 
 updater = Updater("5106969742:AAGm8gb9p2Ko1EUu8IvoTMTgce_ilG3ysqo")
 updater = Updater("5106969742:AAGm8gb9p2Ko1EUu8IvoTMTgce_ilG3ysqo",use_context = True)
