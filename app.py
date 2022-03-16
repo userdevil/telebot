@@ -76,11 +76,11 @@ def unknown_text(update: Update, context: CallbackContext):
     update.message.reply_text(
         "Sorry I can't recognize you , you said '%s'" % update.message.text)
   
- def tut(update: Update, context: CallbackContext):
+def tut(update: Update, context: CallbackContext):
     update.message.reply_text("""Available TUtorials :-
     https://www.youtube.com/channel/UCQNhxVSj8xYB0PG94UlFDJA/videos""")
    
- def api(update: Update, context: CallbackContext):
+def api(update: Update, context: CallbackContext):
     update.message.reply_text("""Available API's :-
     End Url Tracking - https://redliapi.herokuapp.com/
     Encoder - https://encapi.herokuapp.com/""")
