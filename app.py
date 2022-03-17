@@ -1,21 +1,15 @@
 from telegram import*
 from datetime import datetime
 from telegram.ext import*
-import telebot
 
 bot = Bot("5106969742:AAGm8gb9p2Ko1EUu8IvoTMTgce_ilG3ysqo")
 print(bot.get_me())
-
-TOKEN = '5106969742:AAGm8gb9p2Ko1EUu8IvoTMTgce_ilG3ysqo'
-bt = telebot.TeleBot(TOKEN)
-
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
 
 def test_send_message():
         text = 'CI Test Message'
-        tb = telebot.TeleBot(TOKEN)
-        ret_msg = tb.send_message(CHAT_ID, text)
+        ret_msg = bot.send_message(CHAT_ID, text)
         assert ret_msg.message_id
 
 if current_time=='24:00:00':
@@ -100,4 +94,3 @@ updater.dispatcher.add_handler(MessageHandler(
 # Filters out unknown messages.
 updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown_text))
 updater.start_polling()
-bt.polling()
